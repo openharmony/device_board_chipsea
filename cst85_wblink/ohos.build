@@ -1,0 +1,10 @@
+{
+  "parts": {
+    "device_btdm": {
+      "module_list": [
+        "//device/board/chipsea/btdm:btdm"
+      ]
+    }
+  },
+  "subsystem": "device_btdm"
+}
