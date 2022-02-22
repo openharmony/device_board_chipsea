@@ -2,20 +2,26 @@
 ## 介绍
 cst85_wblink开发板是基于芯海科技CST85F01芯片，由芯海科技出品的一款高性能、多功能、高性价比AIoT SoC开发板。cst85_wblink开发板，集成双频WiFi + 双模蓝牙，支持标准的802.11 a/b/g/n/协议，支持BT/BLE 5.0协议，内建多种容量的RAM（最大992KB）和Flash（最大16MB），支持MIPI DSI及CSI，适用于快速开发物联网(IOT)及智能设备的Wi-Fi、蓝牙的应用。
 
-开发板外观图片。
+### 开发板外观图片
 
-**图 1**  开发板图片 <a name=""></a>
-![](figures/开发板图片.png "开发板图片")
+**图 1**  核心板图片 <a name=""></a>
+![](figures/核心板图片.png "核心板图片")
 
-底板图片。
+**图 2**  核心板底面 <a name=""></a>
+![](figures/核心板底面.png "核心板底面")
 
-**图 2**  底板图片 <a name=""></a>
+
+**图 3**  底板图片 <a name=""></a>
 ![](figures/底板图片.png "底板图片")
 
-开发板功能框图及介绍。
 
-**图 2**  开发板功能框图 <a name=""></a>
-![](figures/开发板功能框图.png "开发板功能框图")
+**图 4**  底板和核心板 <a name=""></a>
+![](figures/底板和核心板.png "底板和核心板")
+
+### 开发板功能框图及介绍
+
+**图 5**  系统架构图 <a name=""></a>
+![](figures/系统架构图.png "系统架构图")
 
 ## 开发板规格
 
@@ -24,38 +30,27 @@ cst85_wblink开发板是基于芯海科技CST85F01芯片，由芯海科技出品
 |  CPU	|  Cortex M4 (最高480MHz)|
 |  RAM	|  984K SRAM |
 |  ROM	|  752K ROM|
-|  GPIO	|  TODO|
-|  I2C	|  TODO|
-|  UART |  TODO|
-|  PWM	|  TODO|
-|  SPI	|  TODO|
+|  GPIO	|  GPIOA0~GPIOA15|
+|  I2C	|  I2C master + I2C slave|
+|  I2S	|  2|
+|  UART |  3|
+|  SPI	|  2|
+|  PWM	|  12|
+|  ADC	|  9路 14bits|
 |  Debug UART	|  支持|
-|  ADC	|  TODO|
-|  MIPI  	|  TODO|
-|  Display Engine	|TODO|
-|  Audio	|  TODO|
-|  Camera	|  TODO|
-|  Codec	|  TODO|
-|  Touch Screen	|  TODO|
-|  Wi-Fi	|  WiFi4 2.4G/5G双频|
-|  Bluetooth	|  BT5.0，BT classic，LE Audio，SIG mesh|
-|  Infrared	|  TODO|
-|  USB Host	|  TODO|
-|  USB Device	|  TODO|
-|  TF（MicroSD）|  TODO|
+|  Display Engine	|暂不支持|
+|  Touch Screen	|  暂不支持|
+|  Wi-Fi	|  WiFi6 2.4G/5G双频|
+|  Bluetooth	|  BT5.0，BT classic，LE Audio|
 |  PMIC	|  内置|
-|  thermal	|  TODO|
-|  按键	|  TODO|
+|  按键	|  power|
 
 ## 关键特性
 |  组件名	|  能力介绍|
 |  ----  | ----  |
-|  WLAN服务	|  提供WLAN服务能力。包括：station和hotspot（正在支持中）模式的连接、断开、状态查询等。|
-|  BLUETOOTH 服务	|  提供蓝牙 BT BLE MESH 等功能。|
-|  ASR	|  提供本地唤醒算力。|
-|  模组外设控制	|  提供操作外设的能力。包括：I2C、I2S、ADC、UART、SPI、SDIO、GPIO、PWM、FLASH等。|
-|  分布式软总线	|  在OpenHarmony分布式网络中，提供设备被发现、数据传输的能力。|
-|  设备安全绑定  	|  提供在设备互联场景中，数据在设备之间的安全流转的能力。|
+|  WLAN服务	|  提供WLAN服务能力。包括：station和hotspot模式的连接、断开、状态查询等。|
+|  BLUETOOTH 服务	|  提供蓝牙 BT BLE 等功能。|
+|  模组外设控制	|  提供操作外设的能力。包括：I2C、UART、SPI、SDIO、GPIO、PWM、FLASH等。|
 |  基础加解密	|  提供密钥管理、加解密等能力。|
 |  系统服务管理	|  系统服务管理基于面向服务的架构，提供了OpenHarmony统一化的系统服务开发框架。|
 |  启动引导	|  提供系统服务的启动入口标识。在系统服务管理启动时，调用boostrap标识的入口函数，并启动系统服务。|
@@ -66,7 +61,7 @@ cst85_wblink开发板是基于芯海科技CST85F01芯片，由芯海科技出品
 
 
 ## 引脚定义
-
+![](figures/GPIO框架.png "GPIO框架")
 
 ## 搭建开发环境
 
@@ -138,10 +133,8 @@ https://gitee.com/openharmony/device_soc_chipsea/blob/master/README.md
 
 https://gitee.com/openharmony/device_soc_chipsea/blob/master/README.md
 
-TODO:淘宝网店地址
 
 ## 联系
-TODO：联系地址
 
 
 
