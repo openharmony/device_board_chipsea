@@ -129,6 +129,7 @@ if (product_name == "xts_demo") {
     "-lmodule_ActsParameterTest",
     "-lmodule_ActsBootstrapTest",
     "-lmodule_ActsDfxFuncTest",
+    "-lmodule_ActsHieventLiteTest",
     "-lmodule_ActsKvStoreTest",
     "-lmodule_ActsSamgrTest",
     "-lmodule_ActsWifiServiceTest",
