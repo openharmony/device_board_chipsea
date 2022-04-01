@@ -1,6 +1,6 @@
-# CHIPSEA cst85_wblink EVB
+# Chipsea cst85_wblink evb 
 ## 介绍
-cst85_wblink开发板是基于芯海科技CST85F01芯片，由芯海科技出品的一款高性能、多功能、高性价比AIoT SoC开发板。cst85_wblink开发板，集成双频WiFi + 双模蓝牙，支持标准的802.11 a/b/g/n/协议，支持BT/BLE 5.0协议，内建多种容量的RAM（最大992KB）和Flash（最大16MB），支持MIPI DSI及CSI，适用于快速开发物联网(IOT)及智能设备的Wi-Fi、蓝牙的应用。
+cst85_wblink开发板是基于芯海科技cst85f01芯片，由芯海科技出品的一款高性能、多功能、高性价比AIoT SoC开发板。cst85_wblink开发板，集成双频WiFi + 双模蓝牙，支持标准的802.11 a/b/g/n/协议，支持BT/BLE 5.0协议，内建多种容量的RAM（最大992KB）和Flash（最大16MB），支持MIPI DSI及CSI，适用于快速开发物联网(IOT)及智能设备的Wi-Fi、蓝牙的应用。
 
 ### 开发板外观图片
 
@@ -19,6 +19,8 @@ cst85_wblink开发板是基于芯海科技CST85F01芯片，由芯海科技出品
 ![](figures/底板和核心板.png "底板和核心板")
 
 ### 开发板功能框图及介绍
+
+整个开发板以一颗ContexM4核MCU为核心，外挂串口、SPI、I2C、PWM、ADC等外设以及WIFI和BT模块。为了方便调试，在底板上接了一颗FT2232USB转串口的芯片。
 
 **图 5**  系统架构图 <a name=""></a>
 ![](figures/系统架构图.png "系统架构图")
@@ -70,12 +72,13 @@ cst85_wblink开发板是基于芯海科技CST85F01芯片，由芯海科技出品
 系统要求基于Cortex-m4的liteos_m内核操作系统，采用arm-none-eabi-gcc 10.3版本toolchain,
 提供992K内存和2MB flash系统配置。
 
-OpenHarmony在基于cst85f01 的芯片的cst85_wblink模组，依赖liteos_m内核，内核依赖 cortex-m4架构配置，编译依赖arm官方的arm-none-eabi-gcc 10.3版本
-OpenHarmony需要按照官方文档介绍安装环境 https://gitee.com/openharmony/device_soc_chipsea/blob/master/README.md ，然后编译出烧录包，按照文档介绍烧录。
+OpenHarmony在基于cst85f01 的芯片的cst85_wblink模组，依赖liteos_m内核，内核依赖 cortex-m4架构配置，编译依赖arm官方的arm-none-eabi-gcc 10.3版本。
+OpenHarmony需要按照官方文档介绍安装环境 ，然后编译出烧录包，按照文档介绍烧录:
+https://gitee.com/openharmony-sig/device_soc_chipsea/blob/master/README_zh.md
 
 
 ### 工具要求
-ubuntu 18.04编译，windows10系统烧录。
+Ubuntu18.04编译，Windows10系统烧录。
 
 1.	Ubuntu18.04系统安装
     ```
@@ -96,7 +99,7 @@ ubuntu 18.04编译，windows10系统烧录。
        mkdir -p ~/toolchain/
        tar -zxvf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C ~/toolchain/
        ```
-    设置环境变量。
+    设置环境变量
 
        ```
        vim ~/.bashrc
@@ -107,7 +110,7 @@ ubuntu 18.04编译，windows10系统烧录。
        ```
        export PATH=~/toolchain/gcc-arm-none-eabi-10.3-2021.10/bin:$PATH
        ```
-    生效环境变量。
+    生效环境变量
 
        ```
        source ~/.bashrc
@@ -117,25 +120,25 @@ ubuntu 18.04编译，windows10系统烧录。
 
 ### 搭建过程
 
-https://gitee.com/openharmony/device_soc_chipsea/blob/master/README.md
+https://gitee.com/openharmony-sig/device_soc_chipsea/blob/master/README_zh.md
 
 ## 编译调试
 
-https://gitee.com/openharmony/device_soc_chipsea/blob/master/README.md
+https://gitee.com/openharmony-sig/device_soc_chipsea/blob/master/README_zh.md
 
 按下开发板上开关按钮，通过串口调试工具打印串口log。
 
 ## 首个示例
 
-代码默认有一个内置示例。
+vendor_chipsea仓有XTS示例、连接示例和软总线实例。见[vendor_chipsea](https://gitee.com/openharmony-sig/vendor_chipsea)
 
 ## 参考资源
 
-https://gitee.com/openharmony/device_soc_chipsea/blob/master/README.md
+https://gitee.com/openharmony-sig/device_soc_chipsea/blob/master/README_zh.md
 
 
 ## 联系
-
+![](figures/微信联系群.jpg "微信联系群")
 
 
 **********
