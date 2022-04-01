@@ -96,8 +96,10 @@ board_cflags = [
  "-Wl,--wrap=printf",
 ]
 
-if (product_name == "wblink_demo") {
+if (product_name == "iotlink_demo") {
  board_cflags += [
+   "-DCFG_OS_IPC_MUX_LIMIT=48",
+   "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
    "-DCFG_CONSOLE",
    "-DCFG_APP_CONSOLEWIFI",
    "-D__HEAP_SIZE=0x20000",
@@ -105,14 +107,27 @@ if (product_name == "wblink_demo") {
  ]
 } else if (product_name == "display_demo") {
  board_cflags += [
+   "-DCFG_OS_IPC_MUX_LIMIT=48",
+   "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
    "-DCFG_APP_CONSOLEWIFI",
    "-D__HEAP_SIZE=0x500",
    "-D__STACK_SIZE=4096",
  ]
 } else if (product_name == "xts_demo") {
  board_cflags += [
+   "-DCFG_OS_IPC_MUX_LIMIT=48",
+   "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
    "-D__HEAP_SIZE=0x200",
    "-D__STACK_SIZE=2048",
+ ]
+} else if (product_name == "dsoftbus_demo") {
+ board_cflags += [
+   "-DCFG_OS_IPC_MUX_LIMIT=128",
+   "-DCFG_OS_SYS_HEAP_SIZE=0x30000UL",
+   "-DCFG_CONSOLE",
+   "-DCFG_APP_CONSOLEWIFI",
+   "-D__HEAP_SIZE=0x10000",
+   "-D__STACK_SIZE=4096",
  ]
 }
 
@@ -142,6 +157,17 @@ if (product_name == "xts_demo") {
     "-lhuks_test_common",
     "-Wl,--no-whole-archive",
   ]
+} else if (product_name == "dsoftbus_demo") {
+  board_ld_flags += [
+    "-Wl,--whole-archive",
+    "-ldsoftbus_test",
+    "-lhiview_lite",
+    "-lhilog_lite",
+    "-lhievent_lite",
+    "-lbroadcast",
+    "-lbootstrap",
+    "-Wl,--no-whole-archive",
+  ]
 } else {
   ## WBLINK libs
   board_ld_flags += [
@@ -169,7 +195,7 @@ board_include_dirs = [
 ]
 
 # Board adapter dir for OHOS components.
-board_adapter_dir = ""
+board_adapter_dir = "${ohos_root_path}device/soc/chipsea"
 
 # Sysroot path.
 board_configed_sysroot = ""
