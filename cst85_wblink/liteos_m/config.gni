@@ -96,7 +96,7 @@ board_cflags = [
  "-Wl,--wrap=printf",
 ]
 
-if (product_name == "wblink_demo") {
+if (product_name == "iotlink_demo") {
  board_cflags += [
    "-DCFG_OS_IPC_MUX_LIMIT=48",
    "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
@@ -161,7 +161,6 @@ if (product_name == "xts_demo") {
   board_ld_flags += [
     "-Wl,--whole-archive",
     "-ldsoftbus_test",
-#"-lexample",
     "-lhiview_lite",
     "-lhilog_lite",
     "-lhievent_lite",
