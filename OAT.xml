@@ -27,7 +27,7 @@
         </policylist>
         <filefilterlist>
             <filefilter name="defaultFilter" desc="Files not to check">
-            <filteritem type="filepath" name=".*.png" desc="figure file for README"/>
+            <filteritem type="filepath" name=".*.png|.*.jpg" desc="figure file for README"/>
             </filefilter>
         </filefilterlist>
     </oatconfig>
