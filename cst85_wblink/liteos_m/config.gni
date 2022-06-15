@@ -27,6 +27,7 @@ board_arch = ""
 # E.g. gcc-arm-none-eabi, arm-linux-harmonyeabi-gcc, ohos-clang,  riscv32-unknown-elf.
 # Note: The default toolchain is "ohos-clang". It's not mandatory if you use the default toochain.
 board_toolchain = "arm-none-eabi-gcc"
+
 #board_toolchain = "arm-linux-harmonyeabi-gcc"
 
 # The toolchain path instatlled, it's not mandatory if you have added toolchian path to your ~/.bashrc.
@@ -52,89 +53,90 @@ board_cflags = [
   "-mfloat-abi=softfp",
   "-mthumb",
   "-Og",
+
   # "-g",
   #"-Wall",
   "-fdata-sections",
   "-ffunction-sections",
-  "-D__FPU_PRESENT" ,
+  "-D__FPU_PRESENT",
   "-DLOSCFG_DRIVERS_HDF",
   "-DLOSCFG_DRIVERS_HDF_PLATFORM",
- "-DCFG_HW_PLATFORM=2",
- "-DCFG_RF_MODE=1",
- "-DCFG_DACL_MIXER_MODE=0",
- "-DCFG_DACR_MIXER_MODE=2",
- #"-DCFG_APP_BLESMARTCONFIGWIFI",
- "-DCFG_WIFI_STACK",
- "-DCONFIG_RWNX_LWIP",
- "-DCFG_RSSI_DATAPKT",
- "-DCFG_BT_STACK",
- "-DCFG_SOFTAP",
- "-DCFG_BT_USER",
- "-DCFG_AON",
- "-DCFG_BLE_ONLY",
- "-DCFG_BLE_STACK",
- "-DCFG_SEC_CON",
- "-DCFG_ALLROLES",
- "-DCFG_HOST",
- "-DCFG_BLE",
- "-DCFG_APP",
- "-DCFG_APP_SEC",
- "-DCFG_APP_SMARTCONFIG",
- "-DCFG_WIFI_BT_COMBO",
- "-DCFG_CS1000_MIC_MATRIX=0",
- "-DCFG_PMIC",
- "-DCFG_DBG",
- "-DCFG_FHDLR",
- "-DCFG_ROM_VER=2",
- "-DCFG_PRF",
- "-DCFG_NB_PRF=10",
- "-DCFG_PRF_SMARTCONFIGS",
- "-DCFG_LITEOS",
- "-DCFG_RTOS",
- #"-DCFG_PING",
- "-DLOSCFG_BASE_CORE_HILOG",
- "-Wl,--wrap=printf",
+  "-DCFG_HW_PLATFORM=2",
+  "-DCFG_RF_MODE=1",
+  "-DCFG_DACL_MIXER_MODE=0",
+  "-DCFG_DACR_MIXER_MODE=2",
+
+  #"-DCFG_APP_BLESMARTCONFIGWIFI",
+  "-DCFG_WIFI_STACK",
+  "-DCONFIG_RWNX_LWIP",
+  "-DCFG_RSSI_DATAPKT",
+  "-DCFG_BT_STACK",
+  "-DCFG_SOFTAP",
+  "-DCFG_BT_USER",
+  "-DCFG_AON",
+  "-DCFG_BLE_ONLY",
+  "-DCFG_BLE_STACK",
+  "-DCFG_SEC_CON",
+  "-DCFG_ALLROLES",
+  "-DCFG_HOST",
+  "-DCFG_BLE",
+  "-DCFG_APP",
+  "-DCFG_APP_SEC",
+  "-DCFG_APP_SMARTCONFIG",
+  "-DCFG_WIFI_BT_COMBO",
+  "-DCFG_CS1000_MIC_MATRIX=0",
+  "-DCFG_PMIC",
+  "-DCFG_DBG",
+  "-DCFG_FHDLR",
+  "-DCFG_ROM_VER=2",
+  "-DCFG_PRF",
+  "-DCFG_NB_PRF=10",
+  "-DCFG_PRF_SMARTCONFIGS",
+  "-DCFG_LITEOS",
+  "-DCFG_RTOS",
+
+  #"-DCFG_PING",
+  "-DLOSCFG_BASE_CORE_HILOG",
+  "-Wl,--wrap=printf",
 ]
 
 if (product_name == "iotlink_demo") {
- board_cflags += [
-   "-DCFG_OS_IPC_MUX_LIMIT=48",
-   "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
-   "-DCFG_CONSOLE",
-   "-DCFG_APP_CONSOLEWIFI",
-   "-D__HEAP_SIZE=0x20000",
-   "-D__STACK_SIZE=4096",
- ]
+  board_cflags += [
+    "-DCFG_OS_IPC_MUX_LIMIT=48",
+    "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
+    "-DCFG_CONSOLE",
+    "-DCFG_APP_CONSOLEWIFI",
+    "-D__HEAP_SIZE=0x20000",
+    "-D__STACK_SIZE=4096",
+  ]
 } else if (product_name == "display_demo") {
- board_cflags += [
-   "-DCFG_OS_IPC_MUX_LIMIT=48",
-   "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
-   "-DCFG_APP_CONSOLEWIFI",
-   "-D__HEAP_SIZE=0x500",
-   "-D__STACK_SIZE=4096",
- ]
+  board_cflags += [
+    "-DCFG_OS_IPC_MUX_LIMIT=48",
+    "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
+    "-DCFG_APP_CONSOLEWIFI",
+    "-D__HEAP_SIZE=0x500",
+    "-D__STACK_SIZE=4096",
+  ]
 } else if (product_name == "xts_demo") {
- board_cflags += [
-   "-DCFG_OS_IPC_MUX_LIMIT=48",
-   "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
-   "-D__HEAP_SIZE=0x200",
-   "-D__STACK_SIZE=2048",
- ]
+  board_cflags += [
+    "-DCFG_OS_IPC_MUX_LIMIT=48",
+    "-DCFG_OS_SYS_HEAP_SIZE=0x25000UL",
+    "-D__HEAP_SIZE=0x200",
+    "-D__STACK_SIZE=2048",
+  ]
 } else if (product_name == "dsoftbus_demo") {
- board_cflags += [
-   "-DCFG_OS_IPC_MUX_LIMIT=128",
-   "-DCFG_OS_SYS_HEAP_SIZE=0x30000UL",
-   "-DCFG_CONSOLE",
-   "-DCFG_APP_CONSOLEWIFI",
-   "-D__HEAP_SIZE=0x10000",
-   "-D__STACK_SIZE=4096",
- ]
+  board_cflags += [
+    "-DCFG_OS_IPC_MUX_LIMIT=128",
+    "-DCFG_OS_SYS_HEAP_SIZE=0x30000UL",
+    "-DCFG_CONSOLE",
+    "-DCFG_APP_CONSOLEWIFI",
+    "-D__HEAP_SIZE=0x10000",
+    "-D__STACK_SIZE=4096",
+  ]
 }
 
 board_cxx_flags = board_cflags
-board_ld_flags = [
-  "-L${ohos_root_path}out/${board_name}/${product_name}/libs",
-]
+board_ld_flags = [ "-L${ohos_root_path}out/${board_name}/${product_name}/libs" ]
 
 if (product_name == "xts_demo") {
   ## XTS libs
@@ -187,10 +189,10 @@ board_include_dirs = [
   "//kernel/liteos_m/kernel/arch/arm/cortex-m4/gcc",
   "//device/soc/chipsea/cst85",
   "${ohos_root_path}utils/native/lite/include",
-  "//drivers/framework/include/core",
-  "//drivers/framework/core/common/include/host",
-  "//drivers/framework/include/utils",
-  "//drivers/adapter/khdf/liteos_m/osal/include",
+  "//drivers/hdf_core/framework/include/core",
+  "//drivers/hdf_core/framework/core/common/include/host",
+  "//drivers/hdf_core/framework/include/utils",
+  "//drivers/hdf_core/adapter/khdf/liteos_m/osal/include",
   "//base/hiviewdfx/hilog_lite/interfaces/native/innerkits",
 ]
 
