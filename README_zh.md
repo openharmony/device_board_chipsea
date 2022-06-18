@@ -97,7 +97,7 @@ Ubuntu18.04编译，Windows10系统烧录。
 
        ```shell
        mkdir -p ~/toolchain/
-       tar -zxvf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C ~/toolchain/
+       tar -jxvf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C ~/toolchain/
        ```
     设置环境变量
 
