@@ -188,7 +188,7 @@ if (product_name == "xts_demo") {
 board_include_dirs = [
   "//kernel/liteos_m/kernel/arch/arm/cortex-m4/gcc",
   "//device/soc/chipsea/cst85",
-  "${ohos_root_path}utils/native/lite/include",
+  "${ohos_root_path}commonlibrary/utils_lite/include",
   "//drivers/hdf_core/framework/include/core",
   "//drivers/hdf_core/framework/core/common/include/host",
   "//drivers/hdf_core/framework/include/utils",
