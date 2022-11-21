@@ -143,7 +143,7 @@ if (product_name == "xts_demo") {
   board_ld_flags += [
     "-Wl,--whole-archive",
     "-lhctest",
-    "-lmodule_ActsParameterTest",
+    #"-lmodule_ActsParameterTest",
     "-lmodule_ActsBootstrapTest",
     "-lmodule_ActsDfxFuncTest",
     "-lmodule_ActsHieventLiteTest",
