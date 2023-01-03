@@ -169,6 +169,7 @@ if (product_name == "xts_demo") {
   board_ld_flags += [
     "-Wl,--whole-archive",
     "-ldsoftbus_test",
+    "-lparam_client_lite",
     "-lhiview_lite_static",
     "-lhilog_lite_static",
     "-lhievent_lite_static",
@@ -181,6 +182,7 @@ if (product_name == "xts_demo") {
   board_ld_flags += [
     "-Wl,--whole-archive",
     "-lexample",
+    "-lparam_client_lite",
     "-lhiview_lite_static",
     "-lhilog_lite_static",
     "-lhievent_lite_static",
